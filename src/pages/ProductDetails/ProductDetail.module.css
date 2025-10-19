@@ -1,5 +1,176 @@
 .container {
-  padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  padding: 40px 0;
+}
+
+.header {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.image {
+  flex: 1;
+  max-width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.category {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: var(--secondary);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.nutritionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.nutritionItem {
+  background: var(--light-gray);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.nutritionItem span:first-child {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--gray);
+}
+
+.nutritionItem span:last-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.ingredients {
+  list-style: none;
+}
+
+.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.ingredients li:last-child {
+  border-bottom: none;
+}
+
+.checkoutSection {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.checkoutSection h2 {
+  margin-bottom: 25px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image {
+    max-width: 100%;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .nutritionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 0;
+  }
+  
+  .content, .checkoutSection {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .price {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .category {
+    font-size: 1rem;
+  }
+  
+  .price {
+    font-size: 1.4rem;
+  }
+  
+  .nutritionGrid {
+    grid-template-columns: 1fr;
+  }
 }

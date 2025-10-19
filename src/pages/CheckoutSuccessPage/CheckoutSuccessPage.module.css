@@ -1,4 +1,86 @@
-.success {
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.card {
+  background: var(--white);
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
   text-align: center;
-  padding: 50px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.checkmark {
+  font-size: 4rem;
+  color: var(--success);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 40px 30px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .message {
+    font-size: 1rem;
+  }
+  
+  .button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .checkmark {
+    font-size: 3rem;
+  }
 }

@@ -1,33 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
-import CheckoutSuccessPage from "./pages/CheckoutSuccessPage/CheckoutSuccessPage";
-import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
-import { AuthProvider } from "./context/AuthContext";
-import { CartProvider } from "./context/CartContext";
-import PrivateRoute from "./routes/PrivateRoute";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { MealProvider } from './context/MealContext';
+import Landing from "./pages/LandingPage/LandingPage";
+import ProductDetails from './pages/ProductDetails/ProductDetails';
+import CheckoutSuccess from './pages/CheckoutSuccessPage/CheckoutSuccessPage';
+import Admin from './pages/Admin/AdminDashboard';
+import './App.css';
 
-export default function App() {
+function App() {
   return (
     <AuthProvider>
-      <CartProvider>
+      <MealProvider>
         <Router>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/product/:id" element={<ProductDetailsPage />} />
-            <Route path="/success" element={<CheckoutSuccessPage />} />
-            <Route
-              path="/admin"
-              element={
-                <PrivateRoute>
-                  <AdminDashboard />
-                </PrivateRoute>
-              }
-            />
+            <Route path="/" element={<Landing />} />
+            <Route path="/meal/:id" element={<ProductDetails />} />
+            <Route path="/checkout-success" element={<CheckoutSuccess />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Router>
-      </CartProvider>
+      </MealProvider>
     </AuthProvider>
   );
 }
+
+export default App;

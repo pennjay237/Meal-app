@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
-import styles from "./LandingPage.module.css";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { getFoods } from "../../api/foodAPI";
-import FoodCard from "../../components/FoodCard/FoodCard";
+import React, { useContext } from 'react';
+import { MealContext } from '../../context/MealContext';
+import MealCard from '../../components/MealCard/MealCard';
+import styles from './LandingPage.module.css';
 
-export default function LandingPage() {
-  const [foods, setFoods] = useState([]);
+const Landing = () => {
+  const { meals, fetchMeals } = useContext(MealContext);
 
-  useEffect(() => {
-    getFoods().then(setFoods);
-  }, []);
+  if (!meals.length) {
+    fetchMeals();
+    return <div className={styles.loading}>Loading meals...</div>;
+  }
 
   return (
-    <div>
-      <Navbar />
-      <h1>Food Menu</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Delicious Meals</h1>
       <div className={styles.grid}>
-        {foods.map((food) => (
-          <FoodCard key={food.id} food={food} />
+        {meals.map(meal => (
+          <MealCard key={meal.idMeal} meal={meal} />
         ))}
       </div>
-      <Footer /> 
     </div>
   );
-}
+};
+
+export default Landing;
