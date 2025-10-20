@@ -1,6 +1,12 @@
-/* Global navigation would go here if needed */
+:root {
+  --primary: #2b6cb0;        
+  --primary-dark: #1a4e8a;
+  --secondary: #2d3748;      
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
 
-/* Add subtle animation to page transitions */
 .fade-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -9,7 +15,7 @@
 .fade-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms var(--transition), transform 300ms var(--transition);
 }
 
 .fade-exit {
@@ -19,10 +25,9 @@
 .fade-exit-active {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 300ms var(--transition), transform 300ms var(--transition);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
