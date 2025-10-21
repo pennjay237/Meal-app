@@ -24,12 +24,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Favorites Section */}
-      <section className={styles.favoritesSection}>
-        <h2 className={styles.sectionTitle}>Your Favorite Meals</h2>
-        <FavoriteBasket />
-      </section>
-
       {/* Meals Section */}
       <h2 className={styles.title}>Delicious Meals</h2>
       <div className={styles.grid}>

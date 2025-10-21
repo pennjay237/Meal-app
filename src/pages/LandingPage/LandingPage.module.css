@@ -103,11 +103,12 @@
   color: var(--primary-dark);
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 992px) {
   .hero {
     flex-direction: column-reverse;
     text-align: center;
-    padding: 2.5rem 5%;
+    padding: 2.5rem 6%;
     min-height: 55vh;
   }
 
@@ -116,7 +117,7 @@
   }
 
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .sectionTitle {
@@ -124,22 +125,75 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .hero {
-    min-height: 50vh;
     padding: 2rem 5%;
+    min-height: 50vh;
   }
 
   .heroTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .grid {
+    gap: 1rem;
+    padding: 0 5% 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    min-height: 45vh;
+    padding: 1.8rem 4%;
+  }
+
+  .heroTitle {
+    font-size: 1.7rem;
   }
 
   .heroSubtitle {
     font-size: 0.95rem;
   }
 
+  .heroImage {
+    max-width: 350px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    padding: 0 5% 3rem;
+    padding: 0 4% 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+    margin: 1.5rem 4% 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 40vh;
+    padding: 1.5rem 3%;
+  }
+
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .heroImage {
+    max-width: 300px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+    margin: 1rem 3% 0.8rem;
   }
 }

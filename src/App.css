@@ -28,8 +28,29 @@
   transition: opacity 300ms var(--transition), transform 300ms var(--transition);
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 8%;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    padding: 2rem 5%;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 15px;
+    padding: 1.5rem 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 3%;
   }
 }
