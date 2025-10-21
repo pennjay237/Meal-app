@@ -16,7 +16,7 @@
   padding: 4rem 8%;
   min-height: 90vh;
   color: var(--white);
-  background: url('../../assets/hero-bg.jpg') center/cover no-repeat;
+  background: url('../../assets/bg.png') center/cover no-repeat;
   overflow: hidden;
 }
 

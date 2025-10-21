@@ -1,25 +1,31 @@
-import React from 'react';
-import styles from './LandingPageHero.module.css';
-import heroImage from '../../assets/hero-image.png'; // Replace with your own hero image
+import React, { useContext } from 'react';
+import { MealContext } from '../../context/MealContext';
+import MealCard from '../../components/MealCard/MealCard';
+import Hero from '../../components/Hero/Hero'; // Import the Hero component
+import styles from './LandingPage.module.css';
 
-const LandingPageHero = () => {
+const Landing = () => {
+  const { meals, fetchMeals } = useContext(MealContext);
+
+  if (!meals.length) {
+    fetchMeals();
+    return <div className={styles.loading}>Loading meals...</div>;
+  }
+
   return (
-    <section className={styles.hero}>
-      <div className={styles.overlay}></div>
-      <div className={styles.content}>
-        <h1 className={styles.title}>
-          Discover Delicious <span className={styles.highlight}>Meals</span> Every Day
-        </h1>
-        <p className={styles.subtitle}>
-          Explore a world of recipes, order fresh ingredients, and enjoy home-cooked perfection.
-        </p>
-        <button className={styles.primaryButton}>Get Started</button>
+    <div className={styles.container}>
+      {/* Hero section */}
+      <Hero />
+
+      {/* Page content */}
+      <h1 className={styles.title}>Delicious Meals</h1>
+      <div className={styles.grid}>
+        {meals.map(meal => (
+          <MealCard key={meal.idMeal} meal={meal} />
+        ))}
       </div>
-      <div className={styles.imageWrapper}>
-        <img src={heroImage} alt="Delicious meals" className={styles.heroImage} />
-      </div>
-    </section>
+    </div>
   );
 };
 
-export default LandingPageHero;
+export default Landing;
