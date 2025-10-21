@@ -46,18 +46,6 @@ const CheckoutForm = ({ onSubmit }) => {
         />
       </div>
       
-      <div className={styles.formGroup}>
-        <label>Card Number</label>
-        <input
-          type="text"
-          name="cardNumber"
-          value={formData.cardNumber}
-          onChange={handleChange}
-          placeholder="1234 5678 9012 3456"
-          required
-        />
-      </div>
-      
       <div className={styles.row}>
         <div className={styles.formGroup}>
           <label>Expiry Date</label>
